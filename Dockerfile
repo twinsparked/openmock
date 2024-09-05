@@ -5,7 +5,7 @@ RUN make build
 
 FROM quay.io/goswagger/swagger as swagger-builder
 
-FROM alpine:3.6
+FROM alpine:3.20
 WORKDIR /go/src/github.com/checkr/openmock
 RUN apk add --no-cache ca-certificates libc6-compat
 COPY --from=builder /go/src/github.com/checkr/openmock/om ./om
